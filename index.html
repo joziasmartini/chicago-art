@@ -5,60 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chicago Art Institute API</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
 </head>
 <body>
-
-    <style>
-        .art-container > div {
-            margin: 2rem 0;
-        }
-    </style>
-    
-    <script>        
-        let data; 
-        let pagination;
-
-        async function getDataAndPagination() {
-            await fetch('https://api.artic.edu/api/v1/artworks')
-            .then(res => res.json())
-            .then(res => { 
-                data = res.data
-                pagination = res.pagination
-            })
-            .then(() => {
-                console.log(data)
-                console.log(pagination)
-
-                describeArt(data)
-            })
-            .catch(e => {
-                console.error(e)
-            })
-        }
-
-        async function getImageFromAnotherAPI(imageId) {
-            return `<img src="https://api.artic.edu/api/v1/artworks/${imageId}?fields=id,title,image_id"`
-        }
-
-        function describeArt(data) {
-            const artSection = document.querySelector('.art-container');
-
-            data.map(item => {
-                var newDiv = document.createElement("div");
-
-                let newContent = document.createTextNode(
-                "Artist: " + item.artist_display + 
-                "Title: " + item.title)
-
-                newDiv.appendChild(newContent);
-
-                artSection.appendChild(newDiv);
-            })
-        }
-
-        getDataAndPagination();
-    </script>
-
     <header>
         <h1>Chicago Art Institute API</h1>
     </header>
