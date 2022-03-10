@@ -8,3 +8,6 @@ The [Art Institute of Chicago's](https://www.artic.edu/) API provides JSON-forma
 - [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
 - [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 - [Fetch API](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API)
+
+### Running
+Just open the `index.html` in your browser.
